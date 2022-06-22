@@ -18,7 +18,7 @@ function App() {
   }
 
   function sortByPopularity() {
-    const popularityContact = contacts;
+    const popularityContact = [...contacts];
     let sorted = popularityContact.sort(function (a, b) {
       if (a.popularity > b.popularity) {
         return -1;
@@ -31,7 +31,7 @@ function App() {
   }
 
   function sortByName() {
-    const nameContacts = contacts;
+    const nameContacts = [...contacts];
     let sorted = nameContacts.sort(function (a, b) {
       if (a.name > b.name) {
         return 1;
@@ -49,6 +49,7 @@ function App() {
   //setContacts(copy);
   //};
 
+  /////Yes it works ()
   function deleteitems(idToRemove) {
     const deleteContacts = contacts.filter(
       (contacts) => contacts.id !== idToRemove
